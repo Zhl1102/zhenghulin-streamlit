@@ -1,17 +1,6 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import altair as alt
-from datetime import time
-from datetime import datetime
-from datetime import date
-from streamlit.legacy_caching.caching import cache
-import time
-import matplotlib.pyplot as plt
 from PIL import Image
-import base64
-import streamlit.components.v1 as components
-import graphviz as graphviz
 
 st.title("个人简历")
 image = Image.open('/Users/watermelon/PycharmProjects/pythonStreamlit/证件照.jpeg')
