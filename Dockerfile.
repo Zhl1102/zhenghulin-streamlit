@@ -13,7 +13,6 @@ RUN mkdir -p /app
 
 WORKDIR /app
 ADD  . /app
-RUN echo "152.136.237.203" > /app/dokku_host.config
 RUN pip install -r requirements.txt
 
 # 设置启动Streamlit的执行命令
