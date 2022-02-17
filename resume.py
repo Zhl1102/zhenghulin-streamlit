@@ -1,14 +1,17 @@
+from nbformat import read
 import streamlit as st
 import pandas as pd
 from PIL import Image
 
 sidebar = st.sidebar.radio(
     "导航栏",
-    ("个人简历", "试驾心得")
+    ("自制网页", "个人简历", "试驾心得")
 )
+if sidebar == "自制网页":
+		st.subheader("本网页使用python语言调用streamlit框架制作")
 
-if sidebar == "个人简历":
-		st.title("个人简历")
+elif sidebar == "个人简历":
+		st.title("求职简历")
 		image = Image.open('/Users/watermelon/PycharmProjects/pythonStreamlit/证件照.jpeg')
 		st.image(image, width=100)
 		st.write("---------------------------------")
@@ -28,15 +31,17 @@ if sidebar == "个人简历":
 
 		st.subheader("实习经历")
 		internship = pd.DataFrame({
-				'2021.11-至今|玛蒂尔德(北京)科技有限公司|测试开发': ['隶属中间件测试团队，\
-				负责RabbitMQ和MySQL PXC组件', '负责页面测试，接口自动化测试，性能测试及稳定性测试。', '熟悉Docker和K8S，编写简单python脚本。']})
+				'2021.11-至今|北京凌云雀科技有限公司|软件测试工程师(实习)': ['隶属中间件测试团队，\
+				负责RabbitMQ和MySQL PXC组件', '根据需求文档编写测试用例，执行回归测试并编写测试报告', \
+				'对产品进行相关的页面测试，接口自动化测试，性能测试以及稳定性测试等。', '发现产品缺陷，与研发团队进行有效沟通，\
+				对产品缺陷进行跟踪、分析、解决。']})
 		st.table(internship)
 
 		st.subheader("实践经历")
 		practice = pd.DataFrame({
-				'2020.7-2021.7|类似weibo的Web应用|自主开发': ['目的是将所学知识融会贯通，\
-				通过分析发现Rails技术栈，可以完美实现各方面的学习。', '理解了MVC架构，学会了Linux\
-				命令行操作、Vi编辑器以及Github版本工具。', '通过项目学习，总结出发现问题-分析问题-解决问题-复盘总结的学习方法。'], 
+				'2020.7-2021.7|类似weibo的Web应用|自主开发': ['为实现此页面，选择 Rails技术栈，从前端H5，业务逻辑Ruby，\
+				数据库SQL能完整贯通起来。', '理解了MVC架构，学会了Linux命令行操作、Vi编辑器以及Github版本工具。', \
+				'通过项目学习，总结出发现问题-分析问题-解决问题-复盘总结的学习方法。'], 
 				})
 		practice1 = pd.DataFrame({
 				'2021.09-2021.10|Python爬虫|数据爬取': ['首先研究爬虫方案，搭建以Python和Selenium测试工具为主的环境。', \
@@ -58,3 +63,6 @@ if sidebar == "个人简历":
 							完善自己的机会，对计算机强烈的兴趣驱动着我不断深入学习。")
 
 		st.balloons()
+elif sidebar == "试驾心得":
+		st.title("新能源汽车试驾感受")
+		
