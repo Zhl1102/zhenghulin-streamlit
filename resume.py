@@ -4,10 +4,15 @@ from PIL import Image
 
 sidebar = st.sidebar.radio(
     "导航栏",
-    ("自制网页", "个人简历", "试驾心得")
+    ("HOMEPAGE", "个人简历", "试驾心得")
 )
-if sidebar == "自制网页":
-		st.subheader("本网页使用python语言调用streamlit框架制作")
+if sidebar == "HOMEPAGE":
+		st.header("本网页用python语言调用streamlit框架制作")
+		st.subheader("数字化时代")
+		image  = Image.open('/Users/watermelon/PycharmProjects/pythonStreamlit/网络时代.jpeg')
+		image1 = Image.open('/Users/watermelon/PycharmProjects/pythonStreamlit/网络时代1.jpeg')
+		st.image(image)
+		st.image(image1)
 
 elif sidebar == "个人简历":
 		st.title("求职简历")
@@ -31,7 +36,7 @@ elif sidebar == "个人简历":
 		st.subheader("实习经历")
 		internship = pd.DataFrame({
 				'2021.11-至今|北京凌云雀科技有限公司|软件测试工程师(实习)': ['隶属中间件测试团队，\
-				负责RabbitMQ和MySQL PXC组件', '根据需求文档编写测试用例，执行回归测试并编写测试报告', \
+				负责RabbitMQ和MySQL PXC组件。', '根据需求文档编写测试用例，执行回归测试并编写测试报告。', \
 				'对产品进行相关的页面测试，接口自动化测试，性能测试以及稳定性测试等。', '发现产品缺陷，与研发团队进行有效沟通，\
 				对产品缺陷进行跟踪、分析、解决。']})
 		st.table(internship)
@@ -63,5 +68,14 @@ elif sidebar == "个人简历":
 
 		st.balloons()
 elif sidebar == "试驾心得":
-		st.title("新能源汽车试驾感受")
-		
+		st.title("理想汽车试驾感受")
+		st.subheader("一、整体感受")
+		st.write("1.驾驶感觉很不错，车体很平稳，提速也很快很流畅，使用的都是电机所以没有提速的顿挫感。")
+		st.write("2.副驾体验是最棒的，显示屏可以看剧、刷视频、K歌，座椅按摩通风加热，体验感很惬意。")
+		st.write("3.后排的感受是休息，空间很宽敞，腿部和头部的距离都很大，同样有加热和按摩，适合休息。")
+		st.write("4.后备箱的空间也是相当大的，第三排座椅放倒相当于一张床，很适合野餐；放起来也有一定空间。")
+		st.write("5.最满意的就是理想one是一台油电混合的车，既满足了用电省钱，还没有丢掉油车的动力。")
+		st.subheader("二、期待改进")
+		st.write("1.电池容量增大，增加续航能力，增加充电的速度。")
+		st.write("2.理想同学的智能性也很好，但有时会卡顿。")
+		st.write("3.可以给后排座椅也加上通风功能。")
